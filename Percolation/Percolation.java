@@ -1,6 +1,3 @@
-import edu.princeton.cs.algs4.StdIn;
-import edu.princeton.cs.algs4.StdOut;
-import edu.princeton.cs.algs4.StdRandom;
 
 public class Percolation {
     int lattice[][];
@@ -32,6 +29,8 @@ public class Percolation {
      */
    public void open(int row, int col)      
    {
+       if (row <= 0 || row > num ) throw new IndexOutOfBoundsException("row index out of bounds");
+       if (col <= 0 || col > num ) throw new IndexOutOfBoundsException("col index out of bounds");
        if(isOpen(row, col))
            return;
        int i = row-1;
@@ -77,6 +76,8 @@ public class Percolation {
     */
    public boolean isOpen(int row, int col)
    {
+       if (row <= 0 || row > num ) throw new IndexOutOfBoundsException("row index out of bounds");
+       if (col <= 0 || col > num ) throw new IndexOutOfBoundsException("col index out of bounds");
        return (lattice[row-1][col-1]>0)?true:false;
    }
    
@@ -85,20 +86,9 @@ public class Percolation {
     */
    public boolean isFull(int row, int col)
    {
+       if (row <= 0 || row > num ) throw new IndexOutOfBoundsException("row index out of bounds");
+       if (col <= 0 || col > num ) throw new IndexOutOfBoundsException("col index out of bounds");
        return (openSites<num)?true:false;
-   }
-   
-   public void print()
-   {
-       for(int i = 0; i<num; i++){
-           for(int j = 0; j<num; j++){
-               if(lattice[i][j] == 1)
-                   StdOut.printf("o ");
-               else
-                   StdOut.printf("# ");
-           }
-           StdOut.println();
-       }
    }
    
    /**
@@ -108,16 +98,12 @@ public class Percolation {
        return quickUnion.connected(0, num*num+1);
    }
    
-   UF get(){
-       return quickUnion;
-   }
       
    /**
     * test client (optional)
     */
-   public static void main(String[] args)   
-   {
-       int n = 20;
+   public static void main(String[] args){
+       /*int n = 20;
        Percolation p = new Percolation(n);
        UF t = p.get();
        while(!p.percolates()){
@@ -127,6 +113,6 @@ public class Percolation {
        }
        t.print();
        p.print();
-       StdOut.printf("OpenSites = %d, n*n = %d Fraction = %f\n",p.getOpenSites(), n*n, ((double)(p.getOpenSites())/(n*n)));
+       StdOut.printf("OpenSites = %d, n*n = %d Fraction = %f\n",p.getOpenSites(), n*n, ((double)(p.getOpenSites())/(n*n)));*/
    }
 }

@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <drjava version="drjava-20140826-r5761">
-  <project autorefresh="false" main="Percolation" root="" work="">
+  <project autorefresh="false" main="PercolationStats" root="" work="">
     <createjar file=""/>
     <source>
-      <file active="true" name="Percolation.java" package="" timestamp="08-Dec-2016 09:56:27">
-        <select from="3209" to="3209"/>
-        <scroll column="1673" row="0"/>
+      <file active="true" name="Percolation.java" package="" timestamp="08-Dec-2016 11:40:07">
+        <select from="0" to="0"/>
+        <scroll column="744" row="0"/>
       </file>
       <file name="UF.java" package="" timestamp="08-Dec-2016 09:52:01">
-        <select from="3209" to="3209"/>
-        <scroll column="1673" row="0"/>
+        <select from="0" to="0"/>
+        <scroll column="744" row="0"/>
+      </file>
+      <file name="PercolationStats.java" package="" timestamp="08-Dec-2016 11:45:11">
+        <select from="0" to="0"/>
+        <scroll column="744" row="0"/>
       </file>
     </source>
     <included/>

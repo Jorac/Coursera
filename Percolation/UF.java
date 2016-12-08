@@ -1,5 +1,3 @@
-import edu.princeton.cs.algs4.StdOut;
-import java.lang.Math;
 /**
  * Auto Generated Java Class.
  */
@@ -63,14 +61,5 @@ public class UF {
      */
     int count(){
         return count;
-    }
-    
-    void print(){
-        for(int i = 0; i<id.length; i++){
-            StdOut.printf("%4d ", id[i]);
-            if(i%(Math.sqrt(id.length-2)) == 0)
-                   StdOut.println();
-        }
-        StdOut.println();
     }
 }
