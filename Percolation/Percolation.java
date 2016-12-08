@@ -1,10 +1,9 @@
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
-    int lattice[][];
-    int openSites;
-    int num;
-    WeightedQuickUnionUF quickUnion;
+    private int[][] lattice;
+    private int num;
+    private UF quickUnion;
     
     /**
      * convert row and column indexes to 1-dimensional union find arr
@@ -27,7 +26,7 @@ public class Percolation {
    {  
        if(n<=0)
            throw (new java.lang.IllegalArgumentException());
-       quickUnion = new WeightedQuickUnionUF(n*n+2);   // create UF for all sites + 2 nodes at top 
+       quickUnion = new UF(n*n+2);   // create UF for all sites + 2 nodes at top 
                                                           //& bot
        lattice = new int[n][n];
        for(int i = 0; i<n; i++){
@@ -36,7 +35,6 @@ public class Percolation {
            }
        }
        num = n;
-       openSites = 0;
    }
     
    /**
@@ -78,13 +76,8 @@ public class Percolation {
                quickUnion.union(xyTo1D(i,j), xyTo1D(i,j+1));
            }
        }
-       openSites++;
    }
-   
-   public int getOpenSites(){
-       return openSites;
-   }
-   
+
    /**
     * is site (row, col) open?
     */
@@ -110,6 +103,9 @@ public class Percolation {
        return quickUnion.connected(0, num*num+1);
    }
    
+   public int getParent(int id){
+       return quickUnion.root(id);
+   }
       
    /**
     * test client (optional)
