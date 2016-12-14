@@ -13,7 +13,7 @@ public class Subset {
             que.enqueue(StdIn.readString());
         }
         while (k-- > 0) {
-            StdOut.print(que.dequeue() + " ");
+            StdOut.println(que.dequeue());
         }
     }
 

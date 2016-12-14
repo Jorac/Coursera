@@ -6,12 +6,7 @@
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.Ignore;
 import static org.junit.Assert.*;
 
 /**
@@ -31,7 +26,7 @@ public class DequeTest {
     @Test
     public void testIsEmpty() {
         System.out.println("Deque:isEmpty()");
-        Deque queue = new Deque();
+        Deque<Object> queue = new Deque<Object>();
         boolean expResult = true;
 
         queue.addFirst(1);
@@ -61,7 +56,7 @@ public class DequeTest {
     @Test
     public void testSize() {
         System.out.println("Deque:size()");
-        Deque instance = new Deque();
+        Deque<Object> instance = new Deque<Object>();
         int expResult = 0;
 
         int result = instance.size();
@@ -76,7 +71,7 @@ public class DequeTest {
     public void testAddFirst() {
         System.out.println("Deque:addFirst()");
         Object item = 3123;
-        Deque instance = new Deque();
+        Deque<Object> instance = new Deque<Object>();
 
         instance.addFirst(item);
         Object actual = instance.removeFirst();
@@ -92,7 +87,7 @@ public class DequeTest {
     public void testAddLast() {
         System.out.println("Deque:addLast()");
         Object item = 598;
-        Deque instance = new Deque();
+        Deque<Object> instance = new Deque<Object>();
 
         instance.addLast(item);
         Object actual = instance.removeLast();
@@ -107,7 +102,7 @@ public class DequeTest {
     @Test
     public void testRemoveFirst() {
         System.out.println("Deque:removeFirst()");
-        Deque instance = new Deque();
+        Deque<Object> instance = new Deque<Object>();
         Object expResult = 0;
 
         instance.addFirst(1);
@@ -124,7 +119,7 @@ public class DequeTest {
     @Test
     public void testRemoveLast() {
         System.out.println("Deque:removeLast()");
-        Deque instance = new Deque();
+        Deque<Object> instance = new Deque<Object>();
         Object expResult = 555;
 
         instance.addFirst(expResult);
@@ -141,10 +136,9 @@ public class DequeTest {
     @Test
     public void testIterator() {
         System.out.println("Deque:iterator()");
-        Deque instance = new Deque();
-        Iterator expResult = null;
+        Deque<Object> instance = new Deque<Object>();
 
-        Iterator testObject = instance.iterator();
+        Iterator<Object> testObject = instance.iterator();
         while (testObject.hasNext()) {
             // Assert condition #3 for hasNext() == true:
             //

@@ -87,6 +87,7 @@ public class Deque<Item> implements Iterable<Item> {
         }
         n--;
         Item x = a[head];
+        a[head] = null;
         if (n == 0) {
             resize(0);
         } else if (n <= a.length / 4) {
@@ -110,6 +111,7 @@ public class Deque<Item> implements Iterable<Item> {
         }
         n--;
         Item x = a[tail];
+        a[tail] = null;
         if (n == 0) {
             resize(0);
         } else if (n <= a.length / 4) {
@@ -170,6 +172,7 @@ public class Deque<Item> implements Iterable<Item> {
         for (Item i : arr)
             StdOut.print(i + " ");
         StdOut.println();
+        StdOut.println("a.length = " + a.length);
     }
 
     /**
@@ -179,30 +182,12 @@ public class Deque<Item> implements Iterable<Item> {
      */
     public static void main(String[] args) {
         Deque<Integer> q = new Deque<Integer>();
-//        q.addFirst(1);
-//        StdOut.println("size = " + q.size());
-//        q.print(q);
-//        q.addFirst(2);
-//        StdOut.println("size = " + q.size());
-//        q.print(q);
-//        q.removeFirst();
-//        StdOut.println("size = " + q.size());
-//        q.print(q);
-//        q.removeLast();
-//        StdOut.println("size = " + q.size());
-//        q.print(q);
-        // addFirst + removeLast
-        q.addFirst(1);
-        q.addLast(2);
-        StdOut.println("removed = " + q.removeFirst());
-        q.addLast(5);
-        q.addLast(6);
-        StdOut.println("size = " + q.size());
+        for (int i = 0; i < 23; i++) {
+            q.addFirst(i);
+        }
+        // q.addFirst(1);
+        // StdOut.println("size = " + q.size());
         q.print(q);
-//        q.addFirst(0);
-//        q.isEmpty();
-//        StdOut.println("size = " + q.size()+ " removed = "+q.removeFirst());
-//        q.print(q);
     }
 
 }

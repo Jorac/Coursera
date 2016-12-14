@@ -21,7 +21,7 @@ public class RandomizedQueueTest {
     @Test
     public void testIsEmpty() {
         System.out.println("RandomizedQueue:isEmpty()");
-        RandomizedQueue queue = new RandomizedQueue();
+        RandomizedQueue<Object> queue = new RandomizedQueue<Object>();
         boolean expResult = true;
 
         queue.enqueue(1);
@@ -48,7 +48,7 @@ public class RandomizedQueueTest {
     @Test
     public void testSize() {
         System.out.println("RandomizedQueue:size()");
-        RandomizedQueue instance = new RandomizedQueue();
+        RandomizedQueue<Object> instance = new RandomizedQueue<Object>();
         int expResult = 0;
 
         int result = instance.size();
@@ -60,7 +60,7 @@ public class RandomizedQueueTest {
     public void testEnqueue() {
         System.out.println("RandomizedQueue:enqueue()");
         Object item = 3123;
-        RandomizedQueue instance = new RandomizedQueue();
+        RandomizedQueue<Object> instance = new RandomizedQueue<Object>();
 
         instance.enqueue(item);
         Object actual = instance.sample();
@@ -72,7 +72,7 @@ public class RandomizedQueueTest {
     @Test
     public void testDequeue() {
         System.out.println("RandomizedQueue:dequeue()");
-        RandomizedQueue instance = new RandomizedQueue();
+        RandomizedQueue<Object> instance = new RandomizedQueue<Object>();
 
         instance.enqueue(1);
         instance.enqueue(0);
@@ -85,7 +85,7 @@ public class RandomizedQueueTest {
     @Test
     public void testSample() {
         System.out.println("RandomizedQueue:sample()");
-        RandomizedQueue instance = new RandomizedQueue();
+        RandomizedQueue<Object> instance = new RandomizedQueue<Object>();
 
         instance.enqueue(1);
         instance.enqueue(0);
@@ -98,9 +98,9 @@ public class RandomizedQueueTest {
     @Test
     public void testIterator() {
         System.out.println("RandomizedQueue:iterator()");
-        RandomizedQueue instance = new RandomizedQueue();
+        RandomizedQueue<Object> instance = new RandomizedQueue<Object>();
 
-        Iterator testObject = instance.iterator();
+        Iterator<Object> testObject = instance.iterator();
         while (testObject.hasNext()) {
             // Assert condition #3 for hasNext() == true:
             //
